@@ -27,39 +27,20 @@ Android Studio : https://developer.android.com/studio/
 ```
 Run the Android Studio Installer. 
 Open the project from the Android Studio open option under the file menu.
+Create an android emulator from the AVD by clicking the purple phone icon in the IDE menu.
+Start the emulator from the emulator menu.
+Run the app from android studio and select the running android emulator.
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To deploy to the Google Play store you first need to select the "Generate signed APK" from the Build menu.
+If there is no keystore create one must be created now.
+The created keystore needs to have a expiration date, password and at lest one identifier filled in.
+Once a keystore is available the signed apk process can continue by entering the password.
+The generated apk can be found inside the release folder inside the project folder.
+The apk can be either uploaded to the google play store or installed onto an Android device manually.
 
 ## Built With
 
