@@ -15,20 +15,18 @@ Navigate to the project location and select it then click open.
 
 ### Prerequisites
 
-Android Studio : https://developer.android.com/studio/
 
 ```
-Give examples
+Android Studio : https://developer.android.com/studio/
 ```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
 
 ```
-Give the example
+Run the Android Studio Installer. 
+Open the project from the Android Studio open option under the file menu.
 ```
 
 And repeat
