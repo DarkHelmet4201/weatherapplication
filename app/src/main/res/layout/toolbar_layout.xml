@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#4e7bbc">
+
+    <Button
+        android:id="@+id/hamburger_menu_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/baseline_menu_white_18dp"/>
+
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:text="ABC"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_toRightOf="@+id/hamburger_menu_button"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"/>
+
+</RelativeLayout>
