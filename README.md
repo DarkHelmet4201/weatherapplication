@@ -42,6 +42,12 @@ Once a keystore is available the signed apk process can continue by entering the
 The generated apk can be found inside the release folder inside the project folder.
 The apk can be either uploaded to the google play store or installed onto an Android device manually.
 
+
+## Instructions
+
+A valid five digit zip code needs to be entered into the zip code field. The "Get weather" button is then pressed to load up the weather for the entered zip code. The menu button in the top bar can be pressed to show a drop down menu with six options that have no purpose.
+
+
 ## Built With
 
 Kotlin
