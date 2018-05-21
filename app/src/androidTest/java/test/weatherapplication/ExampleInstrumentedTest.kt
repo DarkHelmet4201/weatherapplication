@@ -5,6 +5,7 @@ import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions
+import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.action.ViewActions.typeText
 import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.RootMatchers.withDecorView
@@ -33,9 +34,15 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun testWeather()
+    @Throws(Exception::class)
+    fun testZipCode()
     {
         val location = "90210"
         onView(withId(R.id.zip_code_field)).perform(typeText(location))
+
+        //val test = testZipCode("")
+        //assert(testZipCode(test, "")
+        //onView(withId(R.id.collect_data_button)).perform(click())
+
     }
 }

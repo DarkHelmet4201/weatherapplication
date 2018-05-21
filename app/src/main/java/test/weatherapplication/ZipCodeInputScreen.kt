@@ -30,6 +30,16 @@ import org.jetbrains.anko.uiThread
 
 class ZipCodeInputScreen : AppCompatActivity() {
 
+    companion object {
+        //Trying to use this in a unit test to check if entered zip code is valid
+        fun testZipCode(zip : String) : Boolean
+        {
+            var regex = Regex("^\\d{5}$")
+            return regex.matches(zip)
+
+        }
+    }
+
     val url: String = "http://api.openweathermap.org/data/2.5/weather?"
 
     //api.openweathermap.org/data/2.5/weather?zip=18974,us&appid=d25afced3ef29a5ee0aa95d4b0ac2145
@@ -88,6 +98,7 @@ class ZipCodeInputScreen : AppCompatActivity() {
              $       = end of the string
              */
 
+            //This checks to see of the user entered a valid 5 digit zip code in the text view
             var regex = Regex("^\\d{5}$")
             var isValidZip = regex.matches(zipCodeTextField.text.toString())
             if(isValidZip)
@@ -145,6 +156,7 @@ class ZipCodeInputScreen : AppCompatActivity() {
         val sb : StringBuilder = StringBuilder()
         var cp : Int = 0
 
+        //Creates a json string from read buffer 1 character at a time until all characters exhausted
         try{
             while ({cp = reader.read(); cp}() != -1)
             {
@@ -160,6 +172,7 @@ class ZipCodeInputScreen : AppCompatActivity() {
 
     fun parseData(data : String)
     {
+        //parses the json string into an object
         val gson = Gson()
         var weatherData: BaseObject? = null
         try {

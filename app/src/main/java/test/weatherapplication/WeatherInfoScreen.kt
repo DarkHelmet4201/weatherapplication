@@ -38,6 +38,7 @@ class WeatherInfoScreen : AppCompatActivity()
         lateinit var toolbar : android.support.v7.widget.Toolbar
 
 
+        //sets up the menu for the toolbar button drop down menu
         val menuTitles : Array<String> = arrayOf("One", "Two", "Three", "Four", "Five", "Six")
 
         val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, menuTitles)
@@ -49,12 +50,15 @@ class WeatherInfoScreen : AppCompatActivity()
         spinner.adapter = arrayAdapter
         spinner.visibility = View.GONE
 
+        //accesses the current activities toolbar in order to customize it
         this.setSupportActionBar(toolbar)
         val bar : ActionBar = this.supportActionBar!!
         bar.setHomeButtonEnabled(false)
         bar.setDisplayShowTitleEnabled(false)
         bar.setDisplayShowCustomEnabled(true)
 
+
+        //inflates the custom view for the tool bar
         val inflator : LayoutInflater = this.layoutInflater
         val menuInflator : MenuInflater = this.menuInflater
         view = inflator.inflate(R.layout.toolbar_layout, null)
@@ -63,11 +67,13 @@ class WeatherInfoScreen : AppCompatActivity()
 
 
 
+
         val hamburgerButton : Button = view.findViewById(R.id.hamburger_menu_button)
         hamburgerButton.setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
 
-                //This unfortunately needs 2 clicks when the spinner is visible to fire and hide the spinner
+                //This unfortunately needs 2 clicks when the spinner is visible to hide the spinner. Think it has something to do with focus being on the spinner and requiring
+                //one click to return focus back to the button. need to find solution to this issue
                 if(spinner.visibility == View.GONE)
                 {
                     spinner.visibility = View.VISIBLE
@@ -81,8 +87,10 @@ class WeatherInfoScreen : AppCompatActivity()
             }
         })
 
+        //gets the weather data from the intent
         weatherObject = intent.getSerializableExtra(WEATHER_DATA) as BaseObject
 
+        //A whole lot of checks for null values in order to either fill in the corresponding textview with the data or show it is not available. Also prevent app from exploding
         if(weatherObject != null) {
 
             val weatherTypeTextField: TextView = this.findViewById(R.id.weather_type_field)
