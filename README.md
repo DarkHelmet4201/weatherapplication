@@ -26,8 +26,8 @@ Android Studio : https://developer.android.com/studio/
 
 ```
 Run the Android Studio Installer. 
-Open the project from the Android Studio open option under the file menu.
-Create an android emulator from the AVD by clicking the purple phone icon in the IDE menu.
+Open the project from the Android Studio "open" option under the "file" menu.
+Create an android emulator from the AVD "Android Virtual Device Manager" by clicking the purple phone icon in the IDE menu.
 Start the emulator from the emulator menu.
 Run the app from android studio and select the running android emulator.
 ```
